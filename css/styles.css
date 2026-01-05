@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#game-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#header {
+    margin-bottom: 20px;
+}
+
+#header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.3em;
+}
+
+#stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.1rem;
+}
+
+#stats span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+#maze-canvas {
+    border: 3px solid #4a90a4;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(74, 144, 164, 0.4);
+    background: #1a1a2e;
+    display: block;
+    margin: 0 auto;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#controls p {
+    margin: 10px 0;
+    color: #aaa;
+}
+
+kbd {
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 0 #222;
+}
+
+.exit-hint {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+#new-game-btn {
+    margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #4a90a4, #357a8a);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#new-game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(74, 144, 164, 0.4);
+}
+
+#new-game-btn:active {
+    transform: translateY(0);
+}
+
+#message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px 60px;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    z-index: 100;
+    border: 2px solid #4ade80;
+    box-shadow: 0 0 50px rgba(74, 222, 128, 0.3);
+    animation: pulse 0.5s ease-in-out;
+}
+
+#message.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Player glow effect */
+@keyframes playerGlow {
+    0%, 100% { box-shadow: 0 0 10px #3b82f6; }
+    50% { box-shadow: 0 0 20px #3b82f6, 0 0 30px #3b82f6; }
+}

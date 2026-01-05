@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazer - Escape the Maze!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>🧩 MAZER</h1>
+            <div id="stats">
+                <span id="level-display">Level: 1</span>
+                <span id="moves-display">Moves: 0</span>
+                <span id="time-display">Time: 0:00</span>
+            </div>
+        </div>
+        <canvas id="maze-canvas"></canvas>
+        <div id="controls">
+            <p>Use <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> arrow keys to move</p>
+            <p>Find the <span class="exit-hint">green exit</span> to advance!</p>
+            <button id="new-game-btn">New Game</button>
+        </div>
+        <div id="message" class="hidden"></div>
+    </div>
+    <script src="js/maze.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
