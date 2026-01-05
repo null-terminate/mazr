@@ -1,0 +1,2 @@
+# mazr
+simple maze game
